@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: jwt-sso-verify
+
+jwt:
+  # HS256 shared secret — must match the secret used by the SSO issuer.
+  # In production, inject via environment variable or secrets manager.
+  secret: "MyVerySecretKeyThatIsAtLeast32CharsLong!!"
+  allowed-domains:
+    - "http://localhost:3000"
+    - "https://app.example.com"
+    - "https://admin.example.com"
